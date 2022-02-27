@@ -1,0 +1,46 @@
+body {
+    background-image: url('station.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    margin-top: 50px;
+    font-weight: bold;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    padding: 10px;
+    font-size: 20px;
+    margin-left: 36%;
+}
+
+button {
+    font-size: 25px;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#number {
+    font-size: 40px;
+}
+
+#save {
+    margin-top: 10px;
+    background-color: darkred;
+}
+
+#increment {
+    background-color: darkgreen;
+}
+
+#item {
+    font-size: 30px;
+}
