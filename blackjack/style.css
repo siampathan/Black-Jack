@@ -22,6 +22,8 @@
 .flex-table-2 div img {
   padding: 10px;
   object-fit: contain;
+  height: 120px;
+  width: 150px;
 }
 
 .flex-table-3 div {
@@ -37,7 +39,7 @@
 th,
 td {
   padding: 5px;
-  border: solid coral;
+  border: 1px solid coral;
   align-items: center;
   text-align: center;
 }
