@@ -1,0 +1,43 @@
+.container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.flex-table,
+.flex-table-2,
+.flex-table-3 {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  justify-content: space-evenly;
+}
+
+.flex-table-2 div {
+  padding: 5px;
+  flex: 1;
+  height: 350px;
+  text-align: center;
+}
+
+.flex-table-2 div img {
+  padding: 10px;
+  object-fit: contain;
+}
+
+.flex-table-3 div {
+  padding: 5px;
+}
+
+.flex-table-3 div button {
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+th,
+td {
+  padding: 5px;
+  border: solid coral;
+  align-items: center;
+  text-align: center;
+}
