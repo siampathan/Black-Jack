@@ -1,3 +1,12 @@
+body {
+  background-image: url("https://www.hdbacks.com/assets/thumbnails/hd441.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: "Fredoka", sans-serif;
+}
+
 .container {
   margin: 0 auto;
   text-align: center;
@@ -34,6 +43,10 @@
   padding: 10px;
   margin-bottom: 10px;
   cursor: pointer;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 th,
@@ -42,4 +55,17 @@ td {
   border: 1px solid coral;
   align-items: center;
   text-align: center;
+}
+
+#hit {
+  background-color: cornflowerblue;
+}
+#stand {
+  background-color: darkgoldenrod;
+}
+#dealer {
+  background-color: red;
+}
+#reset {
+  background-color: rgb(53, 209, 53);
 }

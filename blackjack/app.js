@@ -41,6 +41,10 @@ let blackjack = {
 const YOU = blackjack["you"];
 const DEALER = blackjack["dealer"];
 
+const winSound = new Audio("sounds/sounds_cash.mp3");
+const hitSound = new Audio("sounds/sounds_swish.m4a");
+const lostSound = new Audio("sounds/sounds_aww.mp3");
+
 let windoWidth = window.screen.width;
 let windowHeight = window.screen.height;
 let winner;
@@ -48,6 +52,7 @@ let winner;
 document.querySelector("#hit").addEventListener("click", blackjackHit);
 document.querySelector("#stand").addEventListener("click", blackjackStand);
 document.querySelector("#dealer").addEventListener("click", blackjackDeal);
+document.querySelector("#reset").addEventListener("click", blackjackRestart);
 
 function blackjackHit() {
   if (blackjack["isStand"] === false) {
@@ -55,6 +60,7 @@ function blackjackHit() {
     showCard(card, YOU);
     updateScore(card, YOU);
     showScore(YOU);
+    hitSound.play();
   }
 }
 
@@ -143,11 +149,13 @@ function showWinner() {
     message = "YOU Won!";
     messageColor = "#00e676";
     document.querySelector("#win").textContent = blackjack["wins"] += 1;
+    winSound.play();
   }
   if (winner == DEALER) {
     message = "YOU LOST!";
     messageColor = "red";
     document.querySelector("#loss").textContent = blackjack["losses"] += 1;
+    lostSound.play();
   }
   if (winner == "Draw") {
     message = "YOU Draw!";
@@ -177,10 +185,11 @@ function blackjackDeal() {
     document.querySelector("#your-result").textContent = 0;
     document.querySelector("#dealer-result").textContent = 0;
 
-    document.querySelector("#your-result").style.color = "coral";
-    document.querySelector("#dealer-result").style.color = "coral";
+    document.querySelector("#your-result").style.color = "white";
+    document.querySelector("#dealer-result").style.color = "white";
 
     document.querySelector("#result").textContent = "Let's Play";
+    document.querySelector("#result").style.color = "white";
 
     for (let i = 0; i < yourImages.length; i++) {
       yourImages[i].remove();
@@ -191,4 +200,16 @@ function blackjackDeal() {
     blackjack.pressOnce = false;
     blackjack["isTrunover"] = false;
   }
+}
+
+function blackjackRestart() {
+  blackjackDeal();
+
+  document.querySelector("#win").textContent = 0;
+  document.querySelector("#draw").textContent = 0;
+  document.querySelector("#loss").textContent = 0;
+
+  blackjack.wins = 0;
+  blackjack.draws = 0;
+  blackjack.losses = 0;
 }
